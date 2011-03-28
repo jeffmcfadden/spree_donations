@@ -29,20 +29,6 @@ Order.class_eval do
             l.price     = l.quantity
             l.quantity  = 1
             l.save
-
-            if l.variant.product.is_recurring?
-              sub = RecurringDonationSubscription.new
-              sub.first_name    = self.bill_address.firstname
-              sub.last_name     = self.bill_address.lastname
-              sub.address       = self.bill_address.address1
-              sub.city          = self.bill_address.city
-              sub.state         = self.bill_address.state
-              sub.zip           = self.bill_address.zipcode
-              sub.country       = self.bill_address.country
-              sub.payment_info  = cc
-              sub.amount        = l.price
-              sub.save
-            end
           end
         end
         
