@@ -16,8 +16,6 @@ Order.class_eval do
     #won't be any CC info to use - it gets thrown away with the payment goes
     #away
     def process_payments_and_create_arbs
-        puts "process_payments_and_create_arbs here"
-        
         #This should throw an error if there's an issue
         #so we aren't doing any wrapping or checking.
         ret = self.original_process_payments!
