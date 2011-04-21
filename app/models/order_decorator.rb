@@ -1,4 +1,14 @@
 Order.class_eval do
+  # TODO: Change item_count to be this?
+  def item_count_handling_donations
+    line_items.map do |line_item|
+      if line_item.is_donation?
+        1
+      else
+        line_item.quantity
+      end
+    end.sum
+  end
 
     def finalize_and_add_any_arbs
         self.original_finalize!
