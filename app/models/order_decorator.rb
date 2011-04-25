@@ -1,4 +1,14 @@
 Order.class_eval do
+  # TODO: Change item_count to be this?
+  def item_count_handling_donations
+    line_items.map do |line_item|
+      if line_item.variant.product.is_donation?
+        1
+      else
+        line_item.quantity
+      end
+    end.sum
+  end
 
     def finalize_and_add_any_arbs
         self.original_finalize!
@@ -16,8 +26,6 @@ Order.class_eval do
     #won't be any CC info to use - it gets thrown away with the payment goes
     #away
     def process_payments_and_create_arbs
-        puts "process_payments_and_create_arbs here"
-        
         #This should throw an error if there's an issue
         #so we aren't doing any wrapping or checking.
         ret = self.original_process_payments!
