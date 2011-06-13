@@ -39,6 +39,8 @@ Order.class_eval do
             l.save
           end
         end
+
+        self.update_totals
         
         ret
     end
