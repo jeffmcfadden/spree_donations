@@ -8,7 +8,4 @@ Product.class_eval do
         has_property?( 'is_donation' ) 
     end
     
-    def is_recurring?
-        has_property?( 'is_recurring' ) 
-    end
 end
