@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.9.2'
 
-  # s.author            = 'David Heinemeier Hansson'
+  s.author            = 'Jeff McFadden'
   s.email             = 'jeff.mcfadden@desiringgod.org'
   s.homepage          = 'http://www.desiringgod.org'
   # s.rubyforge_project = 'actionmailer'
